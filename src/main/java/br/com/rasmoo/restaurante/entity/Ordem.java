@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -22,19 +23,24 @@ public class Ordem implements Serializable {
     @ManyToOne
     private Cliente cliente;
 
-    @OneToMany
+    @OneToMany(mappedBy = "ordem")
     /*@JoinTable(
             name = "ordens_cardapio",
             joinColumns = @JoinColumn(name = "ordens_id"),
             inverseJoinColumns = @JoinColumn(name = "cardapio_id")
     )*/
-    private List<OrdensCardapio> ordensCardapioList;
+    private List<OrdensCardapio> ordensCardapioList = new ArrayList<>();
 
     public Ordem() {
     }
 
     public Ordem(Cliente cliente) {
         this.cliente = cliente;
+    }
+
+    public void addOrdensCardapio(OrdensCardapio ordensCardapio) {
+        ordensCardapio.setOrdem(this);
+        this.ordensCardapioList.add(ordensCardapio);
     }
 
     public Integer getId() {

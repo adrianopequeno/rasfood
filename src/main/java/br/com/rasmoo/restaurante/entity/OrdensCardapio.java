@@ -26,6 +26,7 @@ public class OrdensCardapio implements Serializable {
         this.ordem = ordem;
         this.cardapio = cardapio;
         this.quantidade = quantidade;
+        this.valor = cardapio.getValor();
     }
 
     public Integer getId() {
