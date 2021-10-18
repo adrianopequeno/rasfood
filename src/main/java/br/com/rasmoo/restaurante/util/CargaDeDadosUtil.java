@@ -50,7 +50,7 @@ public class CargaDeDadosUtil {
         cardapioDao.cadastrar(scappeta);
         cardapioDao.cadastrar(caesar);
         cardapioDao.cadastrar(chevre);
-        entityManager.getTransaction().commit();
+        entityManager.flush();
         entityManager.clear();
 
     }
