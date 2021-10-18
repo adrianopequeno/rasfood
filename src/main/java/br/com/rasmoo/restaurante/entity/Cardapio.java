@@ -22,8 +22,8 @@ public class Cardapio implements Serializable {
     @ManyToOne
     private Categoria categoria;
 
-    @ManyToMany(mappedBy = "cardapioList")
-    private List<Ordem> ordemList;
+   /* @ManyToMany(mappedBy = "cardapioList")
+    private List<Ordem> ordemList;*/
 
     @Column(name = "data_de_registro")
     private LocalDate dataDeResgistro = LocalDate.now();
@@ -80,14 +80,6 @@ public class Cardapio implements Serializable {
         this.valor = valor;
     }
 
-    public LocalDate getDataDeResgistro() {
-        return dataDeResgistro;
-    }
-
-    public void setDataDeResgistro(LocalDate dataDeResgistro) {
-        this.dataDeResgistro = dataDeResgistro;
-    }
-
     public Categoria getCategoria() {
         return categoria;
     }
@@ -105,7 +97,6 @@ public class Cardapio implements Serializable {
                 ", disponibilidade=" + disponibilidade +
                 ", valor=" + valor +
                 ", categoria=" + categoria +
-                ", dataDeResgistro=" + dataDeResgistro +
                 '}';
     }
 }
