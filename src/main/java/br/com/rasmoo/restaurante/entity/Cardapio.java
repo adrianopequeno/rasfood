@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "cardapio")
@@ -20,6 +21,9 @@ public class Cardapio implements Serializable {
 
     @ManyToOne
     private Categoria categoria;
+
+    @ManyToMany(mappedBy = "cardapioList")
+    private List<Ordem> ordemList;
 
     @Column(name = "data_de_registro")
     private LocalDate dataDeResgistro = LocalDate.now();
