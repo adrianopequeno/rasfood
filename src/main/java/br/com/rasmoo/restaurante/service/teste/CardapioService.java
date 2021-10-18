@@ -52,8 +52,9 @@ public class CardapioService {
         entityManager.flush();
         cardapioDao.cadastrar(salmao);
         entityManager.flush();
-        System.out.println("O Prato consultado foi: " + cardapioDao.consultar(2));
-        System.out.println("O Prato consultado foi: " + cardapioDao.consultar(1));
+        //System.out.println("O Prato consultado foi: " + cardapioDao.consultarPorId(2));
+        //System.out.println("O Prato consultado foi: " + cardapioDao.consultarPorId(1));
+        cardapioDao.consultarTodos().forEach(elemento -> System.out.println("O Prato consultado foi: " + elemento));
 
         entityManager.close();
     }
