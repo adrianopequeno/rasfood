@@ -41,7 +41,7 @@ public class CargaDeDadosUtil {
         Cardapio cordeiro = new Cardapio("Cordeiro", "Carne de bode assada com farinha", true, BigDecimal.valueOf(85.00), categorias.get(2));
         Cardapio scappeta = new Cardapio("Scappeta", "Carne de bode assada com farinha", true, BigDecimal.valueOf(200.00), categorias.get(0));
         Cardapio caesar = new Cardapio("Caesar", "Carne de bode assada com farinha", true, BigDecimal.valueOf(40.00), categorias.get(2));
-        Cardapio chevre = new Cardapio("Chevre", "Carne de bode assada com farinha", true, BigDecimal.valueOf(78.00), categorias.get(1));
+        Cardapio chevre = new Cardapio("Chevre", "Carne de bode assada com farinha", true, BigDecimal.valueOf(55.00), categorias.get(1));
 
         cardapioDao.cadastrar(moqueca);
         cardapioDao.cadastrar(spaquetti);
@@ -51,7 +51,7 @@ public class CargaDeDadosUtil {
         cardapioDao.cadastrar(caesar);
         cardapioDao.cadastrar(chevre);
         entityManager.getTransaction().commit();
-        entityManager.close();
+        entityManager.clear();
 
     }
 }

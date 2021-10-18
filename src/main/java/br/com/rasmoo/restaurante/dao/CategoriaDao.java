@@ -23,9 +23,9 @@ public class CategoriaDao {
     }
 
     public List<Categoria> consultarTodos() {
-        String sql = "SELECT c FROM Categoria c";
+        String jsql = "SELECT c FROM Categoria c";
 
-        return this.entityManager.createQuery(sql, Categoria.class).getResultList();
+        return this.entityManager.createQuery(jsql, Categoria.class).getResultList();
     }
 
     public void atualizar(final Categoria categoria) {
