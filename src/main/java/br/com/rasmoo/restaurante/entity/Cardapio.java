@@ -6,8 +6,8 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "pratos")
-public class Prato implements Serializable {
+@Table(name = "cardapio")
+public class Cardapio implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -18,13 +18,15 @@ public class Prato implements Serializable {
     private Boolean disponibilidade;
     private BigDecimal valor;
 
+    private Categoria categoria;
+
     @Column(name = "data_de_registro")
     private LocalDate dataDeResgistro = LocalDate.now();
 
-    public Prato() {
+    public Cardapio() {
     }
 
-    public Prato(Integer id, String nome, String descricao, Boolean disponibilidade, BigDecimal valor, LocalDate dataDeResgistro) {
+    public Cardapio(Integer id, String nome, String descricao, Boolean disponibilidade, BigDecimal valor, LocalDate dataDeResgistro) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
