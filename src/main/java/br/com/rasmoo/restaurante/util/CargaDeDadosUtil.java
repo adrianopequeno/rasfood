@@ -35,7 +35,7 @@ public class CargaDeDadosUtil {
         CardapioDao cardapioDao = new CardapioDao(entityManager);
 
         List<Categoria> categorias = categoriaDao.consultarTodos();
-        Cardapio moqueca = new Cardapio("moqueca", "Peixe branco, banana da terra, arroz e faroza", true, BigDecimal.valueOf(95.00), categorias.get(2));
+        Cardapio moqueca = new Cardapio("Moqueca", "Peixe branco, banana da terra, arroz e faroza", true, BigDecimal.valueOf(95.00), categorias.get(2));
         Cardapio spaquetti = new Cardapio("Spaquetti", "Macarrao ao molho", true, BigDecimal.valueOf(55.00), categorias.get(2));
         Cardapio bife = new Cardapio("Bife", "Carne vermelha com cebola branca", true, BigDecimal.valueOf(125.00), categorias.get(2));
         Cardapio cordeiro = new Cardapio("Cordeiro", "Carne de bode assada com farinha", true, BigDecimal.valueOf(85.00), categorias.get(2));

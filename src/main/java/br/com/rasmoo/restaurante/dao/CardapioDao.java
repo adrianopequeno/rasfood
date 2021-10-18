@@ -22,16 +22,31 @@ public class CardapioDao {
         return this.entityManager.find(Cardapio.class, id);
     }
 
-    public List<Cardapio> consultarPorValor(final BigDecimal filtro) {
-        String jpql = "SELECT c FROM Cardapio c WHERE c.valor = :valor";
+    public Cardapio consultarPorNome(final String filtro) {
+        try {
+            String jpql = "SELECT c FROM Cardapio c WHERE UPPER(c.nome) = UPPER(:nome)";
+            return this.entityManager.createQuery(jpql, Cardapio.class).setParameter("nome", filtro).getSingleResult();
+        } catch (Exception e) {
+            return null;
+        }
+    }
 
-        return this.entityManager.createQuery(jpql, Cardapio.class).setParameter("valor", filtro).getResultList();
+    public List<Cardapio> consultarPorValor(final BigDecimal filtro) {
+        try {
+            String jpql = "SELECT c FROM Cardapio c WHERE c.valor = :valor";
+            return this.entityManager.createQuery(jpql, Cardapio.class).setParameter("valor", filtro).getResultList();
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     public List<Cardapio> consultarTodos() {
-        String sql = "SELECT c FROM Cardapio c";
-
-        return this.entityManager.createQuery(sql, Cardapio.class).getResultList();
+        try {
+            String sql = "SELECT c FROM Cardapio c";
+            return this.entityManager.createQuery(sql, Cardapio.class).getResultList();
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     public void atualizar(final Cardapio cardapio) {
