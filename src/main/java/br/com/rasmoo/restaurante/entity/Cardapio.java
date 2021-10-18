@@ -18,6 +18,7 @@ public class Cardapio implements Serializable {
     private Boolean disponibilidade;
     private BigDecimal valor;
 
+    @ManyToOne
     private Categoria categoria;
 
     @Column(name = "data_de_registro")
