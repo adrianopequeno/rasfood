@@ -1,10 +1,12 @@
 package br.com.rasmoo.restaurante.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "categorias")
-public class Categoria {
+public class Categoria implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,8 +16,7 @@ public class Categoria {
     public Categoria() {
     }
 
-    public Categoria(Integer id, String nome) {
-        this.id = id;
+    public Categoria(String nome) {
         this.nome = nome;
     }
 

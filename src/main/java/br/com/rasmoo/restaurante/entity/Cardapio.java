@@ -27,8 +27,7 @@ public class Cardapio implements Serializable {
     public Cardapio() {
     }
 
-    public Cardapio(Integer id, String nome, String descricao, Boolean disponibilidade, BigDecimal valor, LocalDate dataDeResgistro) {
-        this.id = id;
+    public Cardapio(String nome, String descricao, Boolean disponibilidade, BigDecimal valor, LocalDate dataDeResgistro) {
         this.nome = nome;
         this.descricao = descricao;
         this.disponibilidade = disponibilidade;
@@ -85,16 +84,24 @@ public class Cardapio implements Serializable {
         this.dataDeResgistro = dataDeResgistro;
     }
 
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
     @Override
     public String toString() {
-        return "Prato{" +
+        return "Cardapio{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", descricao='" + descricao + '\'' +
                 ", disponibilidade=" + disponibilidade +
                 ", valor=" + valor +
+                ", categoria=" + categoria +
                 ", dataDeResgistro=" + dataDeResgistro +
                 '}';
     }
-
 }
