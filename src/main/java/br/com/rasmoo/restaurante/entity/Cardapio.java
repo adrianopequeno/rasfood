@@ -27,15 +27,15 @@ public class Cardapio implements Serializable {
     public Cardapio() {
     }
 
-    public Cardapio(String nome, String descricao, Boolean disponibilidade, BigDecimal valor, LocalDate dataDeResgistro) {
+    public Cardapio(String nome, String descricao, Boolean disponibilidade, BigDecimal valor, Categoria categoria) {
         this.nome = nome;
         this.descricao = descricao;
         this.disponibilidade = disponibilidade;
         this.valor = valor;
-        this.dataDeResgistro = dataDeResgistro;
+        this.categoria = categoria;
     }
 
-    @Id
+
     public Integer getId() {
         return id;
     }
