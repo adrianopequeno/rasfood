@@ -16,7 +16,7 @@ public class Ordem implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "valor_total")
-    private BigDecimal valorTotal;
+    private BigDecimal valorTotal = BigDecimal.ZERO;
     @Column(name = "data_de_criacao")
     private LocalDateTime dataDeCriacao = LocalDateTime.now();
 
@@ -49,6 +49,7 @@ public class Ordem implements Serializable {
     public void addOrdensCardapio(OrdensCardapio ordensCardapio) {
         ordensCardapio.setOrdem(this);
         this.ordensCardapioList.add(ordensCardapio);
+        this.valorTotal = valorTotal.add(ordensCardapio.getValorDeRegistro().multiply(BigDecimal.valueOf(ordensCardapio.getQuantidade())));
     }
 
     public Integer getId() {
