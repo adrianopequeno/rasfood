@@ -28,6 +28,13 @@ public class ClienteDao {
         return this.entityManager.createQuery(jsql, Cliente.class).getResultList();
     }
 
+    public List<Cliente> consultarPorNome(final String nome) {
+        String jsql = "SELECT c FROM Cliente c WHERE LOWER(c.nome) LIKE LOWER(:nome)";
+
+        return this.entityManager.createQuery(jsql, Cliente.class).setParameter("nome","%" + nome+ "%")
+                .getResultList();
+    }
+
     public void atualizar(final Cliente cliente) {
         this.entityManager.merge(cliente);
     }
