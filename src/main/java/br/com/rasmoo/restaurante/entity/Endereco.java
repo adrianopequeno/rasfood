@@ -17,7 +17,7 @@ public class Endereco implements Serializable {
     private String cidade;
     private String estado;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Cliente cliente;
 
     public Endereco() {

@@ -19,7 +19,7 @@ public class Cardapio implements Serializable {
     private Boolean disponibilidade;
     private BigDecimal valor;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Categoria categoria;
 
    /* @ManyToMany(mappedBy = "cardapioList")
