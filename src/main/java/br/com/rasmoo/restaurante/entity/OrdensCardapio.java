@@ -16,7 +16,8 @@ public class OrdensCardapio implements Serializable {
     private Ordem ordem;
     @ManyToOne
     private Cardapio cardapio;
-    private BigDecimal valor;
+    @Column(name = "valor_de_registro")
+    private BigDecimal valorDeRegistro;
     private Integer quantidade;
 
     public OrdensCardapio() {
@@ -25,7 +26,7 @@ public class OrdensCardapio implements Serializable {
     public OrdensCardapio(Cardapio cardapio, Integer quantidade) {
         this.cardapio = cardapio;
         this.quantidade = quantidade;
-        this.valor = cardapio.getValor();
+        this.valorDeRegistro = cardapio.getValor();
     }
 
     public Integer getId() {
@@ -52,12 +53,12 @@ public class OrdensCardapio implements Serializable {
         this.cardapio = cardapio;
     }
 
-    public BigDecimal getValor() {
-        return valor;
+    public BigDecimal getValorDeRegistro() {
+        return valorDeRegistro;
     }
 
-    public void setValor(BigDecimal valor) {
-        this.valor = valor;
+    public void setValorDeRegistro(BigDecimal valor) {
+        this.valorDeRegistro = valor;
     }
 
     public Integer getQuantidade() {
@@ -72,9 +73,8 @@ public class OrdensCardapio implements Serializable {
     public String toString() {
         return "OrdensCardapio{" +
                 "id=" + id +
-                ", ordem=" + ordem +
                 ", cardapio=" + cardapio +
-                ", valor=" + valor +
+                ", valor=" + valorDeRegistro +
                 ", quantidade=" + quantidade +
                 '}';
     }

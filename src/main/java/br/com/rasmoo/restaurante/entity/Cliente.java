@@ -41,22 +41,14 @@ public class Cliente implements Serializable {
         this.nome = nome;
     }
 
-    public List<Endereco> getEnderecoList() {
-        return enderecoList;
-    }
-
-    public void setEnderecoList(List<Endereco> enderecoList) {
-        this.enderecoList = enderecoList;
-    }
-
     @Override
     public String toString() {
         return "Cliente{" +
                 "cpf='" + cpf + '\'' +
                 ", nome='" + nome + '\'' +
+                ", enderecoList=" + enderecoList +
                 '}';
     }
-
     public void addEndereco(Endereco endereco) {
         endereco.setCliente(this);
         this.enderecoList.add(endereco);

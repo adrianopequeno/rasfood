@@ -98,6 +98,7 @@ public class Ordem implements Serializable {
                 ", valorTotal=" + valorTotal +
                 ", dataDeCriacao=" + dataDeCriacao +
                 ", cliente=" + cliente +
+                ", ordensCardapioList=" + ordensCardapioList +
                 '}';
     }
 }

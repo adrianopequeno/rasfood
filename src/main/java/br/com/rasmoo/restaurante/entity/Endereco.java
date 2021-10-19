@@ -96,7 +96,6 @@ public class Endereco implements Serializable {
                 ", bairro='" + bairro + '\'' +
                 ", cidade='" + cidade + '\'' +
                 ", estado='" + estado + '\'' +
-                ", cliente=" + cliente +
                 '}';
     }
 }
