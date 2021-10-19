@@ -2,8 +2,11 @@ package br.com.rasmoo.restaurante.util;
 
 import br.com.rasmoo.restaurante.dao.CardapioDao;
 import br.com.rasmoo.restaurante.dao.CategoriaDao;
+import br.com.rasmoo.restaurante.dao.ClienteDao;
 import br.com.rasmoo.restaurante.entity.Cardapio;
 import br.com.rasmoo.restaurante.entity.Categoria;
+import br.com.rasmoo.restaurante.entity.Cliente;
+import br.com.rasmoo.restaurante.entity.Endereco;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;
@@ -54,4 +57,5 @@ public class CargaDeDadosUtil {
         entityManager.clear();
 
     }
+
 }
