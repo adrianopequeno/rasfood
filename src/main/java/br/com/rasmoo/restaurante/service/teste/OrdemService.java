@@ -20,7 +20,7 @@ public class OrdemService {
         OrdemDao ordemDao = new OrdemDao(entityManager);
 
         EnderecoDao enderecoDao = new EnderecoDao(entityManager);
-        System.out.println(enderecoDao.consultarClientes("SP", "Sao Paulo", "Consolacao"));
+        System.out.println(enderecoDao.consultarClientes("SP", "Sao Paulo", null));
         entityManager.getTransaction().commit();
         entityManager.close();
     }
